@@ -3,7 +3,11 @@ const { Router } = require('express');
 // Ejemplo: const authRouter = require('./auth.js');
 
 
-const router = Router();
+const routes = Router();
+
+routes.get("/", (req, res) => {
+    console.log("Haciendo la primer consulta"); 
+})
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
