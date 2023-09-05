@@ -9,31 +9,29 @@ module.exports = (sequelize) => {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
+      allowNull: false,
     },
     imagen: {
-      type: DataTypes.BLOB,
+      type: DataTypes.STRING,
     },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
     },
-    altura: {
-      type: DataTypes.FLOAT,
-      validate: {
-        min: 0,
-      },
+    height: {
+      type: DataTypes.STRING,
     },
-    peso: {
-      type: DataTypes.FLOAT,
-      validate: {
-        min: 0,
-      },
+    weight: {
+      type: DataTypes.STRING,
     },
-    años_de_vida: {
+    life_span: {
       type: DataTypes.INTEGER,
       validate: {
         min: 0,
       },
     },
+  },{
+    timestamps: false,
   });
 };
